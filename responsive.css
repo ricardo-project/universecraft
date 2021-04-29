@@ -1,0 +1,63 @@
+@keyframes moveWave {
+    from { background-position: 0px 0px }
+    to { background-position: 300px 0px }
+} @keyframes moveWave2 {
+    from { background-position: 0px -25px }
+    to { background-position: 300px -25px }
+} @media only screen and (min-width: 0px) {
+    .title {
+        font-size: 80px
+    } .tipos {
+        flex-direction: column
+    } .options__bola {
+        width: 60px;
+        height: 60px;
+        margin: 5px;
+    } .options__reta {
+        width: calc(100% - 70px);
+        height: 14px;
+    } .crud--corpos > div > .title2 {
+        font-size: 50px;
+        top: -60px;
+        animation: moveWave2 5s infinite linear;
+    } .crud--corpos > .crud__space > div {
+        margin-top: -50px;
+    } .crud__space__form {
+        font-size: 20px;
+    } .options {
+        margin-top: 70px
+    } .campo__nome__limpar {
+        height: 30px
+    }
+} @media only screen and (min-width: 600px) {
+    .options__bola {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+    } .options__reta {
+        width: calc(100% - 120px);
+        height: 20px;
+    } .crud__space__form {
+        font-size: 30px;
+    } .campo__nome__limpar {
+        height: 40px
+    }
+} @media only screen and (min-width: 680px) {
+    .crud--corpos > div > .title2 {
+        animation: moveWave 4s infinite linear;
+        font-size: 80px;
+        top: -80px;
+    } .crud--corpos > .crud__space > div {
+        margin-top: -70px;
+    }
+} @media only screen and (min-width: 720px) {
+    .title {
+        font-size: 110px
+    } .tipos {
+        flex-direction: row
+    }
+} @media only screen and (min-width: 800px) {
+    .options {
+        margin-top: 30px
+    }
+}

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=UTF-8>
+        <title>Teoria da Gravitação Universal</title>
+        <link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans">
+    </head>
+    <style>
+        html, body {
+            height: 100%;  
+        } body {
+            text-align: center;
+            user-select: none;
+            margin: 0px;
+            font-family: Open Sans;
+            color: rgb(220,220,220);
+            margin-bottom: 50px
+        } #back {
+            height: 100%
+        } #teoria {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            flex-direction: column
+        } .pCont {
+            font-size: 18px;
+            text-indent: 70px;
+            text-align: justify;
+            margin: 20px 0px;
+        } h1 {
+            font-family: Lobster;
+            font-weight: normal;
+            text-shadow: rgb(0,0,0,0.5) 4px 4px 0px;
+            font-size: 70px;
+            width: 100%;
+        } #content {
+            width: 80%;
+            max-width: 800px;
+            margin: 0px auto;
+            padding-bottom: 20px
+        } #back {
+            background: linear-gradient(rgb(0,0,0,0.7), rgb(0,0,0,0.95)), url('https://s1.1zoom.me/b5248/231/Parachuting_skydiving_Falling_555153_1920x1080.jpg') no-repeat top fixed;
+            background-size: cover;
+            width: 100%;
+            position: fixed;
+        } #bolas {
+            position: absolute;
+            box-shadow: rgba(0,0,0,0.7) 0px 0px 10px inset
+        } #visual {
+            position: absolute;
+        } .divCnv {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.4s ease
+        } canvas {
+            width: 900px;
+            height: 600px;
+            border-radius: 20px;
+        } #content > img {
+            width: 50%;
+            background: linear-gradient(to right, rgb(255,255,255,0.6), rgb(255,255,255,0.8));
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: rgb(0,0,0,0.5) 3px 3px 0px;
+            transition: all 0.3s ease
+        } #content > img:hover {
+            width: 58%;
+        } li {
+            text-align: justify;
+            font-size: 15px;
+            margin: 10px 0px
+        } input {
+            box-shadow: rgb(0,0,0,0.2) 0px 0px 10px inset, rgb(0,0,0,0.3) 3px 3px 0px;
+        } input[type=number] {
+            text-align: center;
+            font-family: Open Sans;
+            font-size: 16px;
+            padding: 2px;
+            background: linear-gradient(to right, rgb(120,120,120), rgb(140,140,140));
+            border: none;
+            border-radius: 20px;
+            color: white;
+        } input[type=button] {
+            width: 270px;
+            border-radius: 22px;
+            font-family: Open Sans;
+            cursor: pointer;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0px auto 20px;
+            border: 0px;
+            color: rgb(80,80,80);
+            background-color: rgb(230,230,230);
+            padding: 3px;
+            transition: all 0.2s ease-in-out;
+        } input[type=button]:hover {
+            background-color: rgb(120,120,120);
+            color: white
+        } input:focus {
+            outline: none
+        } .informs {
+            display: flex
+        } .informs__tlt {
+            margin: 5px 0px;
+            font-family: Lobster;
+            font-size: 50px;
+            text-align: center
+        } .informs__tlt--tltA {
+            color: #0492C2
+        } .informs__tlt--tltB {
+            color: #7C5295            
+        } .informs__tlt--tltC {
+            color: orangered
+        } ::-webkit-scrollbar {
+            width: 22px;
+            background: rgb(90,90,90)
+        } ::-webkit-scrollbar-thumb {
+            background: rgb(140,140,140);
+            border-radius: 11px
+        } @media only screen and (min-width: 0px) {
+            .divCnv {
+                transform: scale(0.5);
+                height: 300px;
+            } .informs {
+                flex-direction: column
+            }
+        } @media only screen and (min-width: 780px) {
+            .divCnv {
+                transform: scale(0.75);
+                height: 450px;
+            } .informs {
+                flex-direction: row
+            }
+        } @media only screen and (min-width: 950px) {
+            .divCnv {
+                transform: scale(1);
+                height: 600px;
+            }
+        }
+    </style>
+    <body>
+        <div id=back></div>
+        <div id=teoria>
+            <h1>Teoria da Gravitação Universal</h1>
+            <div id=content>
+                <p class=pCont>No século XVII, o físico inglês Isaac Newton propôs um princípio fundamental que governasse alguns fatos: por exemplo, quando um objeto cai em queda livre a partir do repouso, conferimos uma mudança no estado de movimento (o que, segundo o Princípio Fundamental da Dinâmica do próprio Newton, só seria possível graças a ação de uma força); planetas orbitam suas respectivas estrelas, assim como satélites naturais (e também os artificiais atualmente) orbitam seus respectivos planetas. No plano de suas órbitas elípticas, numa perspectiva bidimensional cartesiana, o módulo da velocidade conferido em ambos os eixos mudam conforme o tempo, ou seja, aceleração e, consequentemente, atuação de uma força.</p>
+                <p class=pCont>O princípio que governaria estes fenômenos seria ocasionado por uma força associada a massa de cada objeto existente no Universo: a <b>força gravitacional</b>! Esta força respeitaria todos os princípios básicos da Dinâmica que o próprio Newton estabeleceu: considere dois corpos A e B: a força gravitacional de A em B é exatamente a mesma (em módulo) que a força gravitacional de B em A (Princípio da Ação e Reação). Além disso, o módulo da força muda na proporção inversa do quadrado da distância entre os centros de massa de A e B. Portanto, podemos condensar estas ideias em uma única equação, através de uma constante G (a Constante Gravitacional), atualmente estimada em torno de 0,0000000000667 m³.kg/s² (um valor muito pequeno se usarmos as nossas unidades de medida padrão!).</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/NewtonsLawOfUniversalGravitation.svg/300px-NewtonsLawOfUniversalGravitation.svg.png">
+                <p class=pCont>Abaixo, podemos visualizar o modelo gravitacional newtoniano em ação sobre três objetos: o <b>objeto A</b> (em azul), o <b>objeto B</b> (em roxo), e o <b>objeto C</b> (em laranja). Algumas propriedades físicas dos elementos podem ser alteradas, como massa, distância inicial, velocidade inicial, permitindo uma experiência mais completa com a teoria de Newton. Divirta-se!</p>
+                <div class=informs>
+                    <div class=informs__corpo>
+                        <p class="informs__tlt informs__tlt--tltA">Corpo A</p>
+                        <ul>
+                            <li><input type=number class=massa value=333000> Massa (em massas terrestres)</li><br>
+                            <li><input type=number class=velocX value=0> Velocidade inicial em X (em metros por segundo)</li><br>
+                            <li><input type=number class=velocY value=0> Velocidade inicial em Y (em metros por segundo)</li><br>
+                            <li><input type=number class=distX value=0> Distância X do centro (em UA)</li><br>
+                            <li><input type=number class=distY value=0> Distância Y do centro (em UA)</li>
+                        </ul>
+                    </div>
+                    <div class=informs__corpo>
+                        <p class="informs__tlt informs__tlt--tltB">Corpo B</p>
+                        <ul>
+                            <li><input type=number class=massa value=1> Massa (em massas terrestres)</li><br>
+                            <li><input type=number class=velocX value=0> Velocidade inicial em X (em metros por segundo)</li><br>
+                            <li><input type=number class=velocY value=29760> Velocidade inicial em Y (em metros por segundo)</li><br>
+                            <li><input type=number class=distX value=-1> Distância X do centro (em UA)</li><br>
+                            <li><input type=number class=distY value=0> Distância Y do centro (em UA)</li>
+                        </ul>
+                    </div>
+                    <div class=informs__corpo>
+                        <p class="informs__tlt informs__tlt--tltC">Corpo C</p>
+                        <ul>
+                            <li><input type=number class=massa value=300> Massa (em massas terrestres)</li><br>
+                            <li><input type=number class=velocX value=50000> Velocidade inicial em X (em metros por segundo)</li><br>
+                            <li><input type=number class=velocY value=0> Velocidade inicial em Y (em metros por segundo)</li><br>
+                            <li><input type=number class=distX value=0> Distância X do centro (em UA)</li><br>
+                            <li><input type=number class=distY value=0.5> Distância Y do centro (em UA)</li>
+                        </ul><br>
+                    </div>
+                </div>
+                <ul>
+                    <li><input type=number class=iterat value=1> Iterações por dia</li>
+                </ul>
+                <p><input type=button value="Mostrar animação">&nbsp;&nbsp;<input type=button value="Voltar ao início"></p>
+                <div class=divCnv>
+                    <canvas id=bolas width=900 height=600></canvas>
+                    <canvas id=trajet width=900 height=600 style="background: rgb(40,40,40)"></canvas>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        function pot(base, expoente) {
+            return Math.pow(base, expoente)
+        } function dist(v1, v2) {
+            return Math.pow(posits[v1][0] - posits[v2][0], 2) + Math.pow(posits[v1][1] - posits[v2][1], 2)
+        } function newColor() {
+            const dezena = Math.floor(numColor/50)
+            const variat = (numColor % 50)*25.5/5
+            let scale = new Array()
+            for(let t = 0; t <= 2; t++) {
+                scale.push(255*(Math.floor((dezena + 4 - 2*t)/3) % 2) + (Math.pow(0, Math.abs(dezena - ((4 + 2*t) % 6))) - Math.pow(0, Math.abs(dezena - 1 - 2*t)))*variat)
+            } return ("rgb(" + scale[0] + "," + scale[1] + "," + scale[2] + ")")
+        } function drawCorpos() {
+            for(let a = 0; a < corpos.length; a++) {
+                ctx.beginPath()
+                ctx.fillStyle = corpos[a][1]
+                ctx.arc(W/2 + 200*posits[a][0], H/2 + 200*posits[a][1], corpos[a][3], 0, 2*Math.PI)
+                ctx.fill()
+                ctx.fillStyle = corpos[a][2]
+                ctx.font = "bold " + corpos[a][3]*4/3 + "px Arial"
+                ctx.textAlign = "center"
+                ctx.fillText(corpos[a][0], W/2 + 200*posits[a][0], H/2 + 200*posits[a][1] + corpos[a][3]*7/15)
+            } ctx.fillStyle = "white"
+            ctx.font = "bold 20px Arial"
+            ctx.fillRect(20, 20, 200, 6)
+            ctx.fillText("1 UA", 120, 50)
+            ctx.textAlign = "left"
+            let plu = "s"
+            if(dias == 1) {
+                plu = ""
+            } ctx.fillText(dias + " dia" + plu, 10, H - 10)
+        } let cnv = document.querySelector("#bolas")
+        let ctx = cnv.getContext("2d")
+        let ctxBack = document.querySelector("#trajet").getContext("2d")
+        ctxBack.lineWidth = 2
+        const W = cnv.width
+        const H = cnv.height
+        const G = 1.7810039567*pot(10, -8) //---> Constante Gravitacional Universal (presente na fórmula da Teoria da Gravitação Universal)
+        let set
+        let condChange = true
+        let numColor = 0
+        let velocX = document.querySelectorAll(".velocX")
+        let velocY = document.querySelectorAll(".velocY")
+        let massa = document.querySelectorAll(".massa")
+        let distX = document.querySelectorAll(".distX")
+        let distY = document.querySelectorAll(".distY")
+        let iterat = document.querySelector(".iterat")
+        function verifNum(valor, newcond) {
+            let vFloat = parseFloat(valor)
+            if(isNaN(vFloat) || (valor < 0 && newcond)) {
+                return 0
+            } else {
+                return vFloat
+            }
+        }
+        iterat.addEventListener("input", function() {
+            let valor = parseFloat(iterat.value)
+            if(isNaN(valor) || valor < 1) {
+                iterat.value = 1
+            } else {
+                iterat.value = Math.floor(valor)
+            }
+        }); forEachLista(velocX, (elem, index) => {
+            elem.oninput = function() {
+                if(condChange) {
+                    velocity[index][0] = verifNum(elem.value, false)
+                }
+            }
+        }); forEachLista(velocY, (elem, index) => {
+            elem.oninput = function() {
+                if(condChange) {
+                    velocity[index][1] = verifNum(elem.value, false)
+                }
+            }
+        }); forEachLista(massa, (elem, index) => {
+            elem.oninput = function() {
+                corpos[index][4] = verifNum(elem.value, true)
+            }
+        }); forEachLista(distX, (elem, index) => {
+            elem.oninput = function() {
+                if(condChange) {
+                    posits[index][0] = verifNum(elem.value, false)
+                    positAnt[index][0] = verifNum(elem.value, false)
+                    ctx.clearRect(0, 0, W, H)
+                    drawCorpos()
+                }
+            }
+        }); forEachLista(distY, (elem, index) => {
+            elem.oninput = function() {
+                if(condChange) {
+                    posits[index][1] = verifNum(elem.value, false)
+                    positAnt[index][1] = verifNum(elem.value, false)
+                    ctx.clearRect(0, 0, W, H)
+                    drawCorpos()
+                }
+            }
+        })
+        /* --- VETORES IMPORTANTES PARA A CONSTRUÇÃO DO ALGORITMO --- */
+
+        /*Organização dos elementos do vetor abaixo, respectivamente: Nome do objeto, cor do objeto, cor da fonte do nome, raio do objeto (circular), MASSA do objeto (IMPORTANTE)*/
+        let dias = 0
+        let corpos = new Array(["A", "#0492C2", "white", 60, 333030], ["B", "#7C5295", "white", 22, 1], ["C", "orangered", "white", 22, 300])
+        /*Organização dos elementos do vetor abaixo, respectivamente: Posição do corpo em relação ao eixo X; Posição do corpo em relação ao eixo Y*/
+        let posits = new Array([0, 0], [-1, 0], [0, 0.5])
+        let positAnt = new Array([0, 0], [-1, 0], [0, 0.5])
+        /*Organização dos elementos do vetor abaixo, respectivamente: velocidade do corpo pelo eixo X; velocidade do corpo pelo eixo Y. Caso for positivo, está indo para direita (X) ou para cima (Y); Contudo, se for negativo, está para indo para esquerda (X) ou para baixo (Y)*/
+        let velocity = new Array([0, 0], [0, 29760], [50000, 0])
+        drawCorpos()
+        document.querySelector("input[value='Mostrar animação']").addEventListener("click", function() {
+            if(condChange) {
+                condChange = false
+                set = setInterval(function() {
+                    console.time("t")
+                    calculoGravidade(parseFloat(iterat.value))
+                    console.timeEnd("t")
+                }, 50)
+            }
+        });
+        document.querySelector("input[value='Voltar ao início']").addEventListener("click", function() {
+            clearInterval(set)
+            if(dias !== 0) {
+                forEachLista(velocX, (elem, index) => {
+                    velocity[index][0] = verifNum(elem.value, false)
+                }); forEachLista(velocY, (elem, index) => {
+                    velocity[index][1] = verifNum(elem.value, false)
+                }); forEachLista(distX, (elem, index) => {
+                    posits[index][0] = verifNum(elem.value, false)
+                    positAnt[index][0] = verifNum(elem.value, false)
+                }); forEachLista(distY, (elem, index) => {
+                    posits[index][1] = verifNum(elem.value, false)
+                    positAnt[index][1] = verifNum(elem.value, false)
+                }); ctx.clearRect(0, 0, W, H)
+                ctxBack.clearRect(0, 0, W, H)
+                dias = 0
+                drawCorpos()
+            } condChange = true
+        })
+        function calculoGravidade(quant) {
+            for(let ciclo = 0; ciclo < quant*86400; ciclo++) {
+                for(let a = 0; a < corpos.length; a++) {
+                    let aX = 0 //---> Valor não modular da aceleração gravitacional no eixo X
+                    let aY = 0 //---> Valor não modular da aceleração gravitacional no eixo Y
+                    for(let i = 0; i < a; i++) {
+                        const D = dist(a, i)
+                        const module = G*corpos[i][4]/D
+                        const mX = module*(posits[i][0] - posits[a][0])/pot(D, 0.5)
+                        const mY = module*(posits[i][1] - posits[a][1])/pot(D, 0.5)
+                        aX += mX
+                        aY += mY
+                    } for(let i = a + 1; i < corpos.length; i++) {
+                        const D = dist(a, i)
+                        const module = G*corpos[i][4]/D
+                        const mX = module*(posits[i][0] - posits[a][0])/pot(D, 0.5)
+                        const mY = module*(posits[i][1] - posits[a][1])/pot(D, 0.5)
+                        aX += mX
+                        aY += mY
+                    } // Alterar valores das posições de acordo com as velocidades iniciais e acelerações conferidas em cada eixo
+                    let quant2 = quant*quant
+                    posits[a][0] += (velocity[a][0]/quant + aX/(2*quant2))/149598261000
+                    posits[a][1] += (velocity[a][1]/quant + aY/(2*quant2))/149598261000
+                    // Alterar valores de velocidades de acordo com as acelerações conferidas em cada eixo
+                    velocity[a][0] += aX/quant
+                    velocity[a][1] += aY/quant
+                }
+            } ctx.clearRect(0, 0, W, H)
+            for(let g = 0; g < posits.length; g++) {
+                ctxBack.strokeStyle = corpos[g][1]
+                ctxBack.beginPath()
+                ctxBack.lineTo(W/2 + 200*positAnt[g][0], H/2 + 200*positAnt[g][1])
+                ctxBack.lineTo(W/2 + 200*posits[g][0], H/2 + 200*posits[g][1])
+                ctxBack.stroke()
+            } drawCorpos()
+            for(let k = 0; k < posits.length; k++) {
+                const positConst1 = posits[k][0]
+                const positConst2 = posits[k][1]
+                positAnt[k][0] = positConst1
+                positAnt[k][1] = positConst2
+            } dias++
+        } /*Um método "forEach" generalizado, ou seja, para QUALQUER TIPO DE LISTA (Seja Array, Node List, HTML Collection, etc...), além de ser possível encerrá-lo!*/
+        function forEachLista(lista, funcao) {
+            for(let k = 0; k < lista.length; k++) {
+                if(funcao(lista[k], k)) {
+                    return
+                }
+            }
+        }
+    </script>
+</html>

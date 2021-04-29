@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset=UTF-8>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=viewport content="width=device-width, initial-scale=1.0">
+    <link rel=stylesheet href="style.css">
+    <link rel=stylesheet href="responsive.css">
+    <link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lobster|Dancing+Script|Open+Sans|Montserrat|Ranchers">
+    <link rel="shortcut icon" type="image/x-icon" href="img/planeta2.png">
+    <title>UniverseCraft</title>
+</head>
+<body>
+    <header>
+        <section class="sectMens sectMens--sct1 transit1"></section>
+        <section class="sectMens sectMens--sct2 transit1"></section>
+        <section class="sectMens sectMens--sct3 transit1"></section>
+        <section class="sectMens sectMens--sct4 transit1">
+            <canvas></canvas>
+            <article class=iconsSct>
+                <img src="img/create-or-uptade.png" class="iconsSct__icon iconsSct__icon--change">
+                <img src="img/lista.png" class="iconsSct__icon iconsSct__icon--change">
+                <img src="img/x-icon.png" class="iconsSct__icon iconsSct__icon--out">
+            </article>
+            <article class=options>
+                <div class=options__reta><div></div></div>
+                <div class=options__bola style="background: rgb(255,140,63)"></div>
+                <div class=options__bola></div>
+                <div class=options__bola></div>
+                <div class=options__bola></div>
+            </article>
+            <article class=allCruds>
+                <div class="crud crud--corpos">
+                    <div class=crud__space>
+                        <p class=title2>Corpos Não-Estelares</p>
+                        <div class=crud__space__listaElem>
+                            <p class=listaElem__title>Lista dos corpos</p>
+                            <p class=listaElem__delete><input type=button value="Deletar selecionados" class="bDelete botao"> <input type=button value="Desmarcar tudo" class="bDesmarc botao"></p>
+                        </div>
+                        <div class=crud__space__form>
+                            <div class="campo divsCRUD">
+                                <div class="mens mensRed"></div>
+                                <div class=campo__nome>Nome<img class=campo__nome__limpar></div><input type=text placeholder="Insira o nome do corpo aqui (obrigatório)" class=campoTxt>
+                            </div>
+                            <div class="campo divsCRUD">
+                                <div class="mens mensRed"></div>
+                                <div class=campo__nome>Massa em massas terrestres<img class=campo__nome__limpar></div><input type=text placeholder="Insira a massa aqui (obrigatório)" class=campoTxt>
+                            </div>
+                            <div class="campo divsCRUD">
+                                <div class=campo__nome>Descrição<img class=campo__nome__limpar></div><textarea placeholder="Insira uma descrição pro corpo (opcional)" class=campoTxt></textarea>
+                            </div>
+                            <div class="campo divsCRUD">
+                                <div class="mens mensRed"></div>
+                                <div class=campo__nome>Idade em bilhões de anos<img class=campo__nome__limpar></div><input type=text placeholder="Insira a idade aqui (opcional)" class=campoTxt>
+                            </div>
+                            <div class="campo divsCRUD">
+                                <div class="mens mensRed"></div>
+                                <div class=campo__nome>Rotação do corpo em dias terrestres<img class=campo__nome__limpar></div><input type=text placeholder="Insira a rotação aqui (obrigatório)" class=campoTxt>
+                            </div>
+                            <div class="lista divsCRUD">
+                                <div class="mens mensRed"></div>
+                                <p>Tipo do corpo celeste</p>
+                                <div class=listaVerti>
+                                    <div class="mens mensPurple"></div>
+                                    <div class=listaVerti__conj></div>
+                                </div>
+                            </div>
+                            <div class="form__tipo form__tipo--t0">
+                                <div class="lista divsCRUD">
+                                    <div class="mens mensRed"></div>
+                                    <p>Constituição do planeta</p>
+                                    <div class=listaVerti>
+                                        <div class="mens mensPurple"></div>
+                                        <div class=listaVerti__conj></div>
+                                    </div>
+                                </div>
+                                <div class="lista divsCRUD">
+                                    <div class="mens mensRed"></div>
+                                    <p>Existência de anéis</p>
+                                    <div class=listaVerti>
+                                        <div class="mens mensPurple"></div>
+                                        <div class=listaVerti__conj></div>
+                                    </div>
+                                </div>
+                                <div class="lista divsCRUD">
+                                    <div class="mens mensRed"></div>
+                                    <p>Cor do planeta</p>
+                                    <div class=color></div>
+                                </div>
+                            </div>
+                            <div class="lista form__tipo form__tipo--t1 divsCRUD">
+                                <div class="mens mensRed"></div>
+                                <p>Tipo de sólido</p>
+                                <div class=listaVerti>
+                                    <div class="mens mensPurple"></div>
+                                    <div class=listaVerti__conj></div>
+                                </div>
+                            </div>
+                            <div class=divsCRUD>
+                                <input type=button value="Adicionar" class="add_update botao">
+                                <input type=button value="Cancelar edição" class="cancelEdit botao">
+                                <input type=button value="Limpar tudo" class="clearAll botao">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=crud>
+                    <div class=crud__space>
+                        <p class=title2>Estrelas</p>
+                        <div class=crud__space__listaElem>
+                            <p class=listaElem__title>Lista das estrelas</p>
+                            <p class=listaElem__delete><input type=button value="Deletar selecionados" class="bDelete botao"> <input type=button value="Desmarcar tudo" class="bDesmarc botao"></p>
+                        </div>
+                        <div class=crud__space__form>
+                            <div class="campo divsCRUD">
+                                <div class="mens mensRed"></div>
+                                <div class=campo__nome>Nome<img class=campo__nome__limpar></div><input type=text placeholder="Insira o nome da estrela aqui (obrigatório)" class=campoTxt>
+                            </div>
+                            <div class="campo divsCRUD">
+                                <div class=campo__nome>Descrição<img class=campo__nome__limpar></div><textarea placeholder="Descreva a estrela aqui (opcional)" class=campoTxt></textarea>
+                            </div>
+                            <div class="campo divsCRUD">
+                                <div class="mens mensRed"></div>
+                                <div class=campo__nome>Magnitude absoluta<img class=campo__nome__limpar></div><input type=text placeholder="Insira a magnitude aqui (obrigatório)" class=campoTxt>
+                            </div>
+                            <div class="campo divsCRUD">
+                                <div class="mens mensRed"></div>
+                                <div class=campo__nome>Massa em massas jupiterianas<img class=campo__nome__limpar></div><input type=text placeholder="Insira a massa aqui (obrigatório)" class=campoTxt>
+                            </div>
+                            <div class="lista divsCRUD">
+                                <div class="mens mensRed"></div>
+                                <p>Tipo de estrela</p>
+                                <div class=listaVerti>
+                                    <div class="mens mensPurple"></div>
+                                    <div class=listaVerti__conj></div>
+                                </div>
+                            </div>
+                            <div class="lista divsCRUD form__tipo form__cor--c0">
+                                <div class="mens mensRed"></div>
+                                <p>Cor da anã marrom</p>
+                                <div class=color></div>
+                            </div>
+                            <div class="lista divsCRUD form__tipo form__cor--c1">
+                                <div class="mens mensRed"></div>
+                                <p>Cor da gigante vermelha</p>
+                                <div class=color></div>
+                            </div>
+                            <div class="lista divsCRUD form__tipo form__cor--c2">
+                                <div class="mens mensRed"></div>
+                                <p>Cor da supergigante azul</p>
+                                <div class=color></div>
+                            </div>
+                            <div class="lista divsCRUD form__tipo form__cor--c3">
+                                <div class="mens mensRed"></div>
+                                <p>Cor da anã branca</p>
+                                <div class=color></div>
+                            </div>
+                            <div class=divsCRUD>
+                                <input type=button value="Adicionar" class="add_update botao">
+                                <input type=button value="Cancelar edição" class="cancelEdit botao">
+                                <input type=button value="Limpar tudo" class="clearAll botao">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="crud crud--corpos">
+                    <div class=crud__space>
+                        <p class=title2>Sistemas Estelares</p>
+                        <div class=crud__space__listaElem>
+                            <p class=listaElem__title>Lista dos sistemas</p>
+                            <p class=listaElem__delete><input type=button value="Deletar selecionados" class="bDelete botao"> <input type=button value="Desmarcar tudo" class="bDesmarc botao"></p>
+                        </div>
+                        <div class=crud__space__form>
+                            <div class="campo divsCRUD">
+                                <div class="mens mensRed"></div>
+                                <div class=campo__nome>Nome<img class=campo__nome__limpar></div><input type=text placeholder="Insira o nome do sistema aqui (obrigatório)" class=campoTxt>
+                            </div>
+                            <div class="campo divsCRUD">
+                                <div class=campo__nome>Descrição<img class=campo__nome__limpar></div><textarea placeholder="Descreva o sistema aqui (opcional)" class=campoTxt></textarea>
+                            </div>
+                            <div class="lista divsCRUD">
+                                <div class="mens mensRed"></div>
+                                <p>Corpos Não Estelares</p>
+                                <div class=divH>
+                                    <div class="mens mensPurple mensLeft"></div>
+                                    <div class=divH__lista>
+                                        <div class=listaHoriz></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lista divsCRUD">
+                                <div class="mens mensRed"></div>
+                                <p>Estrelas</p>
+                                <div class=divH>
+                                    <div class="mens mensPurple mensLeft"></div>
+                                    <div class=divH__lista>
+                                        <div class=listaHoriz></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=divsCRUD>
+                                <input type=button value="Adicionar" class="add_update botao">
+                                <input type=button value="Cancelar edição" class="cancelEdit botao">
+                                <input type=button value="Limpar tudo" class="clearAll botao">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=crud>
+                    <div class=crud__space>
+                        <p class=title2>Galáxias</p>
+                        <div class=crud__space__listaElem>
+                            <p class=listaElem__title>Lista das galáxias</p>
+                            <p class=listaElem__delete><input type=button value="Deletar selecionados" class="bDelete botao"> <input type=button value="Desmarcar tudo" class="bDesmarc botao"></p>
+                        </div>
+                        <div class=crud__space__form>
+                            <div class="campo divsCRUD">
+                                <div class="mens mensRed"></div>
+                                <div class=campo__nome>Nome<img class=campo__nome__limpar></div><input type=text placeholder="Insira o nome da galáxia aqui (obrigatório)" class=campoTxt>
+                            </div>
+                            <div class="campo divsCRUD">
+                                <div class=campo__nome>Descrição<img class=campo__nome__limpar></div><textarea placeholder="Descreva a galáxia aqui (opcional)" class=campoTxt></textarea>
+                            </div>
+                            <div class="lista divsCRUD">
+                                <div class="mens mensRed"></div>
+                                <p>Sistemas estelares</p>
+                                <div class=divH>
+                                    <div class="mens mensPurple mensLeft"></div>
+                                    <div class=divH__lista>
+                                        <div class=listaHoriz></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=divsCRUD>
+                                <input type=button value="Adicionar" class="add_update botao">
+                                <input type=button value="Cancelar edição" class="cancelEdit botao">
+                                <input type=button value="Limpar tudo" class="clearAll botao">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=allCruds__lista></div>
+            </article>
+        </section>
+        <section class="sectMens sectMens--sct5 transit1">
+            <article class=sectMens--sct5__artc>
+                <img src="img/x-icon.png" class=sectMens--sct5__fechar>
+                <img src="img/valores_crud.png" class="sectMens--sct5__lista sectMens--sct5__other">
+                <iframe src="gravidade.html" class=sectMens--sct5__other></iframe>
+            </article>
+            <article class="sectMens--sct5__artc mensagem">
+                <p class=mensagem__title>Wow... Espere um pouco!</p>
+                <p class=mensagem__texto>Um dos elementos que você inseriu para ser deletado está sendo editado neste momento. Deseja excluir absolutamente todos os elementos selecionados ou somente os elementos que não estão sendo editados no momento?</p>
+                <p class=mensagem__icons><img src="img/right.png"> <img src="img/x-icon.png"></p>
+            </article>
+        </section>
+    </header>
+    <img src="img/sound.png" class=iconsound>
+    <main>
+        <section>
+            <article>
+                <p class=title>UniverseCraft</p>
+                <p class=descrit></p>
+                <div class=tipos>
+                    <div class="tipos__tipo tipoIntrod">
+                        <div class=tipos__tipo__img>
+                            <img src="img/lista.png">
+                        </div>
+                        <p>Ver as listas</p>
+                    </div>
+                    <div class="tipos__tipo tipoIntrod">
+                        <div class=tipos__tipo__img>
+                            <img src="img/create-or-uptade.png">
+                        </div>
+                        <p>Criar ou atualizar itens</p>
+                    </div>
+                    <div class="tipos__tipo tipoIntrod">
+                        <div class=tipos__tipo__img>
+                            <img src="img/planeta.png">
+                        </div>
+                        <p>Teoria da Gravitação</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+<script>
+    /* !--- FUNÇÕES SUPER IMPORTANTES ---! */
+
+    /*Um método "forEach" generalizado, ou seja, para QUALQUER TIPO DE LISTA (Seja Array, Node List, HTML Collection, etc...), além de ser possível encerrá-lo!*/
+    function forEachLista(lista, funcao) {
+        for(let k = 0; k < lista.length; k++) {
+            if(funcao(lista[k], k)) {
+                return
+            }
+        }
+    } function indID(idElem, index) {
+        for(let k = 0; k < allLists[index].length; k++) {
+            if(idElem == allLists[index][k].id) {
+                return k
+            }
+        } return -1
+    }
+</script>
+<script src="functs.js"></script>
+<script src="classes.js"></script>
+<script>
+    let mensInicial = "O Universo é um imenso baú cheio de coisas para serem descobertas... E nada melhor do que organizar todas essas descobertas aqui, onde você pode adicionar, remover ou atualizar planetas, estrelas, e muito mais!"
+    let pInicial = document.querySelector(".descrit")
+    let numInicial = 0
+    let setInicial
+    document.addEventListener("load", mostrarP()) //---> MOSTRA A MENSAGEM INICIAL DO CRUD
+    let fundo = document.querySelector("main")
+    let urlsBck = ['https://wallpapertag.com/wallpaper/full/1/4/a/422289-hd-universe-wallpaper-1920x1080-for-iphone-5.jpg', 'https://cdn.wallpapersafari.com/56/11/OIf0lp.jpg', 'https://wallpaperaccess.com/full/1219598.jpg', 'https://wallpapercave.com/wp/jo9mmpH.jpg', 'https://i.redd.it/1fgdzur5shr11.jpg']
+    let indBck = 1
+    setTimeout(function() {
+        alterarFundo()
+        setInterval(function() {    
+            alterarFundo()
+        }, 3000)
+    }, 2000)
+    let iconsSct = document.querySelectorAll(".iconsSct__icon--change")
+    let iconFechar = document.querySelector(".iconsSct__icon--out")
+    let Forms = document.querySelectorAll(".crud__space__form")
+    let Listas = document.querySelectorAll(".crud__space__listaElem")
+    let pDelete = document.querySelectorAll(".listaElem__delete")
+    iconFechar.onclick = closeSects
+    let allTipos = document.querySelectorAll(".tipoIntrod")
+    forEachLista(allTipos, (elem, index) => {
+        addFunctTipo(elem)
+        if(index <= 1) {
+            elem.onclick = () => {
+                openSects(index)
+            }
+        } else {
+            elem.onclick = () => {
+                abrirMens(0, 1)
+            }
+        }
+    });
+
+    let sects = document.querySelectorAll(".sectMens")
+    let vDisply = ["none", "block"]
+    let divsValoresList = new Array([], [], [], [])
+    let nomesCRUDs = new Array(["corpos não estelares", "o"], ["estrelas", "a"], ["sistemas", "a"])
+    let valoresList = new Array(
+        /*CORPOS NÃO ESTELARES*/
+        new Array([ ["Planeta", 'Corpo celeste que segue três características: esférico, orbita uma estrela e possui uma vizinhança "limpa" de planetóides.'], ["Asteróide", "Corpos sólidos menores, comumente de formato irregular, tendo no máximo umas centenas de quilômetros de diâmetro."] ], [ ["Gasoso", "Partes mais externas comumente formada por gases (Ex.: H e He)"], ["Sólido", "Partes mais externas comumente formada por elementos sólidos, como rochas."] ], [ ["Sim", "Este planeta possui anéis!"], ["Não", "Este planeta não possui anéis!"] ], [ ["sandybrown", "Marrom de areia (#f4a460)"], ["peru", "Sombra de laranja (#cd853f)"], ["darkred", "Vermelho escuro (#8b0000)"], ["tomato", "Vermelho do tomate (#ff6347)"], ["indianred", "Vermelho indiano (#cd5c5c)"], ["darkcyan", "Ciano escuro (#008b8b)"], ["darkslategrey", "Cinza ardósia escuro (#2f4f4f)"], ["forestgreen", "Verde da floresta (#228b22)"], ["indigo", "Azul anil (#4b0082)"], ["mediumvioletred", "Vermelho violeta médio (#c71585)"], ["slategrey", "Cinza ardósia (#708090)"], ["darkgrey", "Cinza escuro (#a9a9a9)"], ["grey", "Cinza (#808080)"] ], [ ["Rochoso", "Formado exclusivamente por rocha."], ["Ferroso", "Formado exclusivamente por ferro."], ["Rochoso-ferroso", "Formado de rocha e ferro."] ]),
+        /*ESTRELAS*/
+        new Array([ ["Anã marrom", "Intermédio de um planeta e uma estrela, não sendo massivas o suficiente para produzir reação nuclear."], ["Gigante vermelha", "Estrelas mais frias existentes, geralmente estrelas em estágio final de vida, fundindo até ferro, no máximo."], ["Supergigante azul", 'Estrelas mais quentes existentes, possuem uma "vida" muito curta em comparação com outras estrelas.'], ["Anã branca", "Estrelas mais comuns no Universo, podendo chegar à bilhões de anos. O Sol é um exemplo desta classificação."] ], [ ["chocolate", "Cor de chocolate (#d2691e)"], ["coral", "Coral (#ff7f50)"], ["saddlebrown", "Sela marrom (#8b4513)"], ["sienna", "Laranja avermelhado (#a0522d)"], ["darkgoldenrod", "Cajado dourado escuro (#b8860b)"] ], [ ["red", "Vermelho (#ff0000)"], ["orangered", "Laranja um pouco avermelhado (#ff4500)"], ["firebrick", "Tijolo de Fogo (#b22222)"], ["brown", "Marrom (#964b00)"], ["darkred", "Vermelho escuro (#8b0000)"] ], [ ["mediumturquoise", "Turquesa média (#48d1cc)"], ["dodgerblue", "Azul furtivo (#1e90ff)"], ["lightcyan", "Ciano claro (#e0ffff)"], ["powderblue", "Azul pólvora (#b0e0e6)"], ["skyblue", "Azul céu (#87ceeb)"] ], [ ["white", "Branco (#ffffff)"] , ["lightgrey", "Cinza claro (#d3d3d3)"], ["oldlace", "Renda antiga (#fdf5e6)"], ["snow", "Neve (#fffafa)"] ]),
+        /*SISTEMAS ESTELARES*/
+        new Array([0, [], 0], [1, , 1]),
+        /*GALÁXIAS*/
+        new Array([2, [], 2])
+    );
+    let atribArray = new Array(function(elem) {
+        return elem.naoEstrelas
+    }, function(elem) {
+        return elem.estrelas
+    }, function(elem) {
+        return elem.sistemas
+    })
+    let informsList = new Array( /*Cada vetor abaixo possui as seguintes informações: (0) representação do tipo de dados (fixo - false, dinâmico removível - true, dinâmico irremovível - 2); (1) máximo de itens a ser selecionado; (2) se é obrigado a selecionar alguma opção (booleano); (3) se ele vai ser adicionado em um elemento (booleano), (4) Função modificadora para evento de clique (OPCIONAL)*/
+        /*CORPOS NÃO ESTELARES*/
+        new Array([false, 1, true, false, function() {
+            document.querySelector(".form__tipo--t0").style.display = "none"
+            document.querySelector(".form__tipo--t1").style.display = "none"
+            for(let t = 1; t <= 4; t++) {
+                informsList[0][t][2] = false
+                informsList[0][t][3] = false
+            } if(divsValoresList[0][0][0].length == 1) {
+                let indexList = divsValoresList[0][0][0][0]
+                document.querySelector(".form__tipo--t" + indexList).style.display = "block"
+                for(let t = 1 + 3*indexList; t <= 3 + indexList; t++) {
+                    if(t !== 1) {
+                        informsList[0][t][2] = true
+                    } informsList[0][t][3] = true
+                }
+            }
+        }], [false, 1, false, false], [false, 1, false, false], [false, 1, false, false], [false, 1, false, false]),
+        /*ESTRELAS*/
+        new Array([false, 1, true, true, function() {
+            for(let t = 1; t <= 4; t++) {
+                document.querySelector(".form__cor--c" + (t - 1)).style.display = "none"
+                informsList[1][t][2] = false
+                informsList[1][t][3] = false
+            } if(divsValoresList[1][0][0].length == 1) {
+                let indice = divsValoresList[1][0][0][0]
+                document.querySelector(".form__cor--c" + indice).style.display = "block"
+                informsList[1][indice + 1][2] = true
+                informsList[1][indice + 1][3] = true
+            }
+        }], [false, 1, false, true], [false, 1, false, true], [false, 1, false, true], [false, 1, false, true]),
+        /*SISTEMAS ESTELARES*/
+        new Array([2, Infinity, false, true], [true, 3, true, true]), //---> OBSERVAÇÃO: ESTRELA É OBRIGATÓRIA, TEMPORARIAMENTE MODIFICADO PARA TESTES
+        /*GALÁXIAS*/
+        new Array([2, Infinity, true, true])
+    )
+    let condMR = true
+    let condSound = true
+    forEachLista(iconsSct, (elem, index) => {
+        elem.onclick = () => {
+            changeSect(index)
+        }
+    });
+    let iconS = document.querySelector(".iconsound")
+    let allOpt = document.querySelector(".options")
+    let bolas = document.querySelectorAll(".options__bola")
+    let reta = document.querySelector(".options__reta > div")
+    let allCruds = document.querySelectorAll(".crud")
+    let botaoAdd = document.querySelectorAll(".add_update")
+    let botaoCancelar = document.querySelectorAll(".cancelEdit")
+    let botaoLimpar = document.querySelectorAll(".clearAll")
+    let indexDelete = new Array([], [], [], [])
+    let numEdit = [-1,-1,-1,-1]
+    let imgsSound = ["not-sound", "sound"]
+    let allItensLista = new Array()
+    let camposTxt = new Array()
+    let artcCRUD = document.querySelector(".allCruds")
+    let quarterCircle = document.querySelector(".allCruds__lista")
+    let fecharMensIcon = sects[4].querySelector(".sectMens--sct5__fechar")
+    let artcsMens = sects[4].querySelectorAll(".sectMens--sct5__artc")
+    let subMens = sects[4].querySelectorAll(".sectMens--sct5__other")
+    iconS.onclick = function() {
+        condSound = 1 - condSound
+        this.src = "img/" + imgsSound[condSound] + ".png"
+    }; quarterCircle.onclick = () => {
+        abrirMens(0, 0)
+    }; fecharMensIcon.onclick = () => {
+        fecharMens()
+    };
+
+    const abc = "abcdefghijklmnopqrstuvwxyzàáäâãèéëêìíïîòóöôùúüûñçßÿœæŕśńṕẃǵǹḿǘẍźḧ"
+    const number = "0123456789"
+    let functsValid = new Array(
+        /*CORPOS NÃO-ESTELARES*/
+        new Array(
+            function(valor) { //---> Nome (obrigatório)
+                return verifValue(valor, true, 3, true) //---> NA VERDADE É 5 O MÍNIMO
+            }, function(valor) { //---> Massa em massas terrestres (obrigatório)
+                return verifNumber(valor, 0.5, 10000)
+            }, function(valor) { //--->  Descrição (opcional)
+                return verifValue(valor, false)
+            }, function(valor) { //---> Idade em bilhões de anos (obrigatório)
+                return verifNumber(valor, 0, 13)
+            }, function(valor) { //---> Rotação do corpo em dias terrestres (obrigatório)
+                return verifNumber(valor, 0.5, 100)
+            }
+        ), /*ESTRELAS*/
+        new Array(
+            function(valor) { //---> Nome (obrigatório)
+                return verifValue(valor, true, 3, true)
+            }, function(valor) { //---> Descrição (opcional)
+                return verifValue(valor, false)
+            }, function(valor) { //---> Magnitude absoluta (obrigatório)
+                return verifNumber(valor, -5, 20)
+            }, function(valor) { //---> Massa em massas jupiterianas (obrigatório)
+                return verifNumber(valor, 70, Infinity)
+            }
+        ), /*SISTEMAS*/
+        new Array(
+            function(valor) { //---> Nome (obrigatório)
+                return verifValue(valor, true, 3, false) //---> NA VERDADE É 10 O MÍNIMO
+            }, function(valor) { //---> Descrição (opcional)
+                return verifValue(valor, false)
+            }
+        ), /*GALÁXIAS*/
+        new Array(
+            function(valor) { //---> Nome (obrigatório)
+                return verifValue(valor, true, 8, false)
+            }, function(valor) { //---> Descrição (opcional)
+                return verifValue(valor, false)
+            }
+        )
+    )
+
+    let imageIcons = document.querySelectorAll(".mensagem__icons > img")
+    let imageFunct = new Array(
+        function(elem) {
+            if(elem instanceof Planeta) {
+                return "planeta2"
+            } else if(elem instanceof Asteroide) {
+                return "asteroide"
+            }
+        }, function(elem) {
+            return "estrela"    
+        }, function(elem) {
+            return "sistema"
+        }, function(elem) {
+            return "galaxy"
+        }
+    )
+
+    /* ---------------------------------------------------- */
+    /* --------- PARTE MAIS IMPORTANTE DO CÓDIGO ---------- */
+    /* ---------------------------------------------------- */
+    forEachLista(allCruds, (elem, index) => {
+        camposTxt.push(Forms[index].querySelectorAll(".campoTxt"))
+
+        /*ÍCONES DE X PARA LIMPEZA DOS CAMPOS*/
+        forEachLista(Forms[index].querySelectorAll(".campo__nome__limpar"), (elem2, index2) => {
+            elem2.src = "img/x-icon.png"
+            elem2.onclick = function() {
+                let Campo = camposTxt[index][index2]
+                if(Campo.value !== "") {
+                    Campo.value = ""
+                }
+            }
+        });
+
+        /*FAZ A VERIFICAÇÃO DOS DADOS PARA UM NOVO ELEMENTO A SER ADICIONADO/ATUALIZADO*/
+        botaoAdd[index].onclick = () => {
+            let valoresErros = new Array()
+            let novosValores = new Array()
+
+            /*VERIFICA OS CAMPOS DE TEXTO*/
+            forEachLista(elem.querySelectorAll(".campo"), (elem2, index2) => {
+                let valorCampo = functsValid[index][index2](camposTxt[index][index2].value)
+                if(Array.isArray(valorCampo)) { //---> O valor inserido no campo é válido
+                    if(valoresErros.length == 0) {
+                        novosValores.push(valorCampo[0])
+                    }
+                } else { //---> O valor inserido no campo NÃO é válido
+                    valoresErros.push([valorCampo, new classMens(elem2.querySelector(".mens"))])
+                }
+            });
+            
+            /*VERIFICA AS LISTAS (SE HÁ, PELO MENOS, UMA OPÇÃO MARCADA NAS OBRIGATÓRIAS)*/
+            forEachLista(elem.querySelectorAll(".lista"), (elem2, index2) => {
+                let itensList = divsValoresList[index][index2]
+                let dados = informsList[index][index2]
+                if(dados[0] > 0 && itensList[1].length == 0 && dados[2]) {
+                    let words = nomesCRUDs[valoresList[index][index2][0]]
+                    valoresErros.push(["Esta lista não tem " + words[0] + " para serem adicionad" + words[1] + "s. Adicione, pelo menos, um!", new classMens(elem2.querySelector(".mens"))])
+                } else {
+                    if(itensList[0].length == 0 && dados[2]) {
+                        valoresErros.push(["No mínimo, uma opção deve ser selecionada!", new classMens(elem2.querySelector(".mens"))])
+                    } else {
+                        if(valoresErros.length == 0 && dados[3]) {
+                            let novaLista = new Array()
+                            itensList[0].sort(function(a, b) { return a - b })
+                            forEachLista(itensList[0], (elem3) => {
+                                novaLista.push(elem3)
+                            }); novosValores.push(novaLista)
+                        }
+                    }
+                }
+            })
+
+            if(valoresErros.length == 0) { //---> SE NÃO HOUVER ERROS, ADICIONAR/ATUALIZAR ELEMENTO
+                let isAdd = (numEdit[index] == -1)
+                if(isAdd) {
+                    let condCRUDEdit = false
+                    relationCRUD(index, (indexLista, index2) => {
+                        if(numEdit[indexLista] !== -1) {
+                            condCRUDEdit = true
+                        }
+                    });
+                    if(!condCRUDEdit) {
+                        mostrarAvisoCRUD("right", "Elemento adicionado com sucesso!", false)
+                        createNewElem(index, novosValores, SERIAL[index], true)
+                        SERIAL[index]++
+                        playAud("Huawei 1")
+                    } else if(condCRUDEdit) {
+                        mostrarAvisoCRUD("x-icon", "Lista dinâmica em CRUD em edição!", true)
+                    }
+                } else {
+                    mostrarAvisoCRUD("right", "Elemento atualizado com sucesso!", false)
+                    updateNewElem(index, novosValores)
+                    playAud("Huawei 2")
+                } forEachLista(informsList[index], (elem2, index2) => {
+                    if(elem2[0] == 2) { //---> Se for uma LISTA DINÂMICO REMOVÍVEL, remover os itens selecionados!
+                        let divList = divsValoresList[index][index2]
+                        divList[0].sort(function(a, b) { return a - b })
+                        forEachLista(divList[0], (elem3) => {
+                            let indRemovi = indNum(valoresList[index][index2][1], elem3)
+                            divList[2].removeChild(divList[1][indRemovi])
+                            valoresList[index][index2][1].splice(indRemovi, 1)
+                        }); divList[0] = []
+                    }
+                })
+            } else { //---> MAS SE HOUVER, MOSTRAR OS ERROS QUE FORAM IDENTIFICADOS
+                mostrarAvisoCRUD("interrog", "Há erros que devem ser corrigidos!", true)
+                forEachLista(valoresErros, (elem2, index2) => {
+                    elem2[1].addDivMens(elem2[0])
+                })
+                setTimeout(function() {
+                    forEachLista(valoresErros, (elem2, index2) => {
+                        elem2[1].removeDivMens()
+                    })
+                }, 3000)
+            }
+        }
+        
+        /*RECEBE UMA LISTA VIVA DOS ITENS ADICIONADOS NA LISTA*/
+        allItensLista.push(Listas[index].getElementsByClassName("tipoElem"))
+        /*BOTÃO QUE DESMARCA OS ELEMENTOS SELECIONADOS PARA SER DELETADO*/
+        Listas[index].querySelector(".bDesmarc").addEventListener("click", function() {
+            forEachLista(indexDelete[index], (elem2) => {
+                let itemLista = allItensLista[index][indID(elem2, index)]
+                if(numEdit[index] == elem2) {
+                    itemLista.style.background = "rgb(122,187,240)"
+                } else {
+                    itemLista.style.background = "rgb(255,109,24)"
+                }
+            }); indexDelete[index] = []
+            pDelete[index].style.height = "0px"
+        });
+        /*BOTÃO QUE FAZ A EXCLUSÃO DOS ELEMENTOS SELECIONADOS*/
+        Listas[index].querySelector(".bDelete").addEventListener("click", function() {
+            existOnList(indexDelete[index], numEdit[index], () => {
+                abrirMens(1, index)
+            }, () => {
+                deleteItens(index)
+            })
+        });
+        /*BOTÃO QUE CANCELA UMA EDIÇÃO E RETORNA AO MODO DE ADIÇÃO DE ELEMENTOS*/
+        botaoCancelar[index].addEventListener("click", function() {
+            returnModoAdd(index, true, true, true)
+        });
+        /*BOTÃO QUE LIMPA TODAS AS OPÇÕES PARA RECOMEÇAR!*/
+        botaoLimpar[index].addEventListener("click", function() {
+            forEachLista(camposTxt[index], (elem2) => {
+                elem2.value = ""
+            });
+            desmarcarListas(index)
+            functExtra[index]()
+        })
+    })
+    /* -------------------------------------------------- */
+    /* --------- FIM  DA PARTE MAIS IMPORTANTE ---------- */
+    /* -------------------------------------------------- */
+
+    let newElemFunct = new Array(
+        function(lista) {
+            if(lista.length == 8) {
+                return new Planeta()
+            } else {
+                return new Asteroide()
+            }
+        }, function() {
+            return new Estrela()
+        }, function() {
+            return new Sistema()
+        }, function() {
+            return new Galaxia()
+        }
+    );
+    let functExtra = new Array(
+        function(elem) {
+            informsList[0][0][4]()
+        }, function(elem) {
+            informsList[1][0][4]()
+        }, function() { }
+        , function() { }
+    )
+
+    let allLists = new Array([], [], [], []) //---> VARIÁVEL MAIS IMPORTANTE DE TODAS!!! Armazena todos os objetos das classes principais: Primeiro vetor (Corpos não estelares, Estrelas, Sistemas estelares, Galáxias)
+    let SERIAL = new Array(0, 0, 0, 0) //---> Armazena os seriais, que definem os identificadores dos elementos
+    let indBola = 0
+    forEachLista(bolas, (elem, index) => {
+        elem.onclick = () => {
+            if(indBola !== index) {
+                if(indBola > index) {
+                    for(let k = index + 1; k <= indBola; k++) {
+                        bolas[k].style.background = "rgb(251,102,15)"
+                    }
+                } else {
+                    for(let k = indBola + 1; k <= index; k++) {
+                        bolas[k].style.background = "rgb(255,140,63)"
+                    }
+                } reta.style.width = index*100/(allCruds.length - 1) + "%"
+                allCruds[0].style.marginLeft = -index*100 + "%"
+                indBola = index
+            }
+        }
+    })
+
+    /* ----- DESENHOS DE FUNDO!!! ----- */
+    let cnv = document.querySelector("canvas")
+    let ctx = cnv.getContext("2d")
+    let maiorCompr
+    let W
+    let H
+    let setCnv
+    let points = new Array()
+    let constAng = new Array()
+    let velocPoint = new Array()
+    document.addEventListener("DOMContentLoaded", redimensCnv(true))
+    window.addEventListener("resize", () => {
+        redimensCnv(false)
+    })
+    sects[3].onscroll = () => {
+        let Top = quarterCircle.getBoundingClientRect().top
+        cnv.style.top = -Top + "px"
+    };
+
+    let storageList = localStorage.getItem(0)
+    let storageSERIAL = localStorage.getItem(1)
+    let storageValoresList = localStorage.getItem(2)
+    functStorage()
+    function functStorage() {
+        isValoresList(storageValoresList)
+        isList(storageList)
+        isSERIAL(storageSERIAL)
+    }
+
+    /*ANTES DO USUÁRIO SAIR DA PÁGINA, O PROGRAMA VAI ARMAZENAR OS ELEMENTOS DO CRUD NO NAVEGADOR!!!*/
+    window.addEventListener("beforeunload", function() {
+        forEachLista(numEdit, (elem, index) => {
+            if(elem !== -1) {
+                returnModoAdd(index, false, true, true)
+            }
+        });
+        let vetorDados = new Array()
+        forEachLista(allLists, (elem, index) => {
+            vetorDados.push([])
+            forEachLista(elem, (elem2, index2) => {
+                let allVetor = elem2.returnValores(false)
+                vetorDados[index].push(allVetor)
+            })
+        }); localStorage.setItem(0, JSON.stringify(vetorDados))
+        localStorage.setItem(1, JSON.stringify(SERIAL))
+        localStorage.setItem(2, JSON.stringify(valoresList))
+    });
+
+    /* ------------------------------ */
+    /* ----- CRIAÇÃO DAS LISTAS ----- */
+    /* ------------------------------ */
+    forEachLista(allCruds, (elem, index) => {
+        /*VERIFICA E ADICIONA OS VALORES DAS LISTAS*/
+        forEachLista(elem.querySelectorAll(".lista"), (elem2, index2) => {
+            /*VERIIFCA OS TIPOS DE ESTILO DAS LISTAS*/
+            let conjValores = valoresList[index][index2]
+            let informs = informsList[index][index2]
+            let divColor = elem2.querySelector(".color")
+            let divVerti = elem2.querySelector(".listaVerti")
+            let divHoriz = elem2.querySelector(".listaHoriz")
+            if(divColor) { //---> CRIAÇÃO DE LISTAS DE COR
+                forEachLista(conjValores, (elem3, index3) => {
+                    createItemColor(index, index2, index3, elem3, divColor)
+                }); divsValoresList[index].push(new Array([], divColor.getElementsByClassName("color__div__cor"), divColor))
+            } else if(divVerti) { //---> CRIAÇÃO DE LISTAS VERTICAIS
+                let conjItens = divVerti.querySelector(".listaVerti__conj")
+                let divMensConj = divVerti.querySelector(".mens")
+                conjItens.onmouseenter = function() {
+                    this.style.zIndex = 2
+                    if(this.scrollHeight < 180) {
+                        this.style.height = this.scrollHeight + "px"
+                    } else {
+                        this.style.height = "180px"
+                    }
+                }; conjItens.onmouseleave = function() {
+                    this.style.zIndex = 0
+                    this.style.height = "45px"
+                }
+                if(informs[0] == false) { //---> Se for fixa
+                    forEachLista(conjValores, (elem3, index3) => {
+                        createItemVerti(index, index2, index3, elem3[0], elem3[1], conjItens, divMensConj, false)
+                    });
+                    divsValoresList[index].push(new Array([], conjItens.getElementsByTagName("div"), conjItens))
+                } else { //---> Se for dinâmica (tanto removível quanto irremovível)
+                    divsValoresList[index].push(new Array([], conjItens.getElementsByTagName("div"), conjItens, divMensConj))
+                }
+            } else if(divHoriz) { //---> CRIAÇÃO DE LISTAS DE COR
+                let divMensHoriz = elem2.querySelector(".divH > .mens")
+                if(informs[0] == false) { //---> Se for fixa
+                    divsValoresList[index].push(new Array([], divHoriz.getElementsByTagName("div"), divHoriz))
+                } else { //---> Se for dinâmica (tanto removível quanto irremovível)
+                    if(informs[0] == 1) { //---> Dinâmica irremovível
+                        forEachLista(allLists[conjValores[0]], (elem3, index3) => {
+                            createItemHoriz(index, index2, elem3.id, "<img src='img/" + imageFunct[conjValores[0]](allLists[conjValores[0]][index3]) + ".png' style='height: 100px'>", elem3.id, divHoriz, divMensHoriz, true, conjValores[0])
+                        })
+                    } else if(informs[0] == 2) { //---> Dinâmica removível
+                        forEachLista(conjValores[1], (elem3, index3) => {
+                            createItemHoriz(index, index2, elem3, "<img src='img/" + imageFunct[conjValores[0]](allLists[conjValores[0]][index3]) + ".png' style='height: 100px'>", elem3, divHoriz, divMensHoriz, true, conjValores[0])
+                        })
+                    } divsValoresList[index].push(new Array([], divHoriz.getElementsByTagName("div"), divHoriz, divMensHoriz))
+                }
+            }
+            if(informs[4] !== undefined) { //---> Se a lista configura-se como uma lista modificadora
+                forEachLista(divsValoresList[index][index2][1], (elem3, index3) => {
+                    elem3.addEventListener("click", function() {
+                        informs[4]()
+                    })
+                })
+            }
+        })
+    });
+</script>
+</html>
