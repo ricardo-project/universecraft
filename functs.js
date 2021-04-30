@@ -51,11 +51,11 @@ function updateNewElem(index, lista) {
     itemEdit.querySelector("p").textContent = newElem.txtLine()
     allLists[index][indID(numEdit[index], index)] = newElem
     relationCRUD(index, (indexLista, index2) => {
-        if(informsList[indexLista][index2][0] == true) {
+        if(informsList[indexLista][index2][0] == 2) {
             existOnList(valoresList[indexLista][index2][1], numEdit[index], (indEdit) => {
                 divsValoresList[indexLista][index2][1][indEdit].querySelector("img").src = "img/" + imageFunct[index](newElem) + ".png"
             }, () => {})
-        } else if(informsList[indexLista][index2][0] == 2) {
+        } else if(informsList[indexLista][index2][0] == true) {
             divsValoresList[indexLista][index2][1][indID(numEdit[index], index)].querySelector("img").src = "img/" + imageFunct[index](newElem) + ".png"
         }
     }); returnModoAdd(index, false, true, false)
